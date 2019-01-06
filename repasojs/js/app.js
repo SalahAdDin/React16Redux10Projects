@@ -27,4 +27,14 @@ const client = function (name) {
     console.log(`Client: ${name}`);
     console.log('====================================');
 }
+
 client('José'); 
+
+const persona = {
+    name: 'José',
+    profession: 'Web developer',
+    age: 26
+}
+console.log('====================================');
+console.log(`Persona: ${persona} \n Name: ${persona.name} \n Profession: ${persona['profession']}.`);
+console.log('====================================');
