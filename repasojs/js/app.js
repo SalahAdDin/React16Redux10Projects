@@ -44,5 +44,10 @@ function Tarea(name, subject){
     this.subject = subject;
 }
 
+Tarea.prototype.showWorkTaskInfo = function(){
+    return `Tarea: ${this.name}, Priority: ${this.subject}`;
+}
+
 const tarea1 = new Tarea('Learn JS', 'Urgent');
 console.log(tarea1);
+console.log(tarea1.showWorkTaskInfo());
