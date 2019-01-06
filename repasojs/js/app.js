@@ -73,4 +73,19 @@ console.log(version);
 console.log(frameworks);
 console.log(newer);
 console.log('====================================');
+
+const band = 'Gripin';
+const gender = 'Pop';
+const songs = ['Bes', 'Durma'];
+
+// const gripin = {
+//     band: band,
+//     gender: gender,
+//     songs: songs
+// }
+
+const gripin = {band, gender, songs};
+
+console.log('====================================');
+console.log(gripin);
 console.log('====================================');
