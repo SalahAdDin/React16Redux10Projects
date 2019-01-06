@@ -51,3 +51,26 @@ Tarea.prototype.showWorkTaskInfo = function(){
 const tarea1 = new Tarea('Learn JS', 'Urgent');
 console.log(tarea1);
 console.log(tarea1.showWorkTaskInfo());
+
+
+const learningJS = {
+    version: {
+        newer: 'ES6',
+        older: 'ES5'
+    },
+    frameworks: ['VueJS', 'AngularJS']
+}
+
+// let version = learningJS.version.newer;
+// let frameworks = learningJS.frameworks[1];
+
+let {version, frameworks} = learningJS;
+let {newer} = learningJS.version;
+
+console.log('====================================');
+console.log(learningJS);
+console.log(version);
+console.log(frameworks);
+console.log(newer);
+console.log('====================================');
+console.log('====================================');
