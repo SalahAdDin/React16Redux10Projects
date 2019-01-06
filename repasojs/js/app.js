@@ -38,3 +38,11 @@ const persona = {
 console.log('====================================');
 console.log(`Persona: ${persona} \n Name: ${persona.name} \n Profession: ${persona['profession']}.`);
 console.log('====================================');
+
+function Tarea(name, subject){
+    this.name = name;
+    this.subject = subject;
+}
+
+const tarea1 = new Tarea('Learn JS', 'Urgent');
+console.log(tarea1);
