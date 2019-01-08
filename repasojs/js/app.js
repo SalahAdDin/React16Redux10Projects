@@ -3,13 +3,15 @@ const job = 'Web developer';
 
 console.log(`Name: ${name}, Job: ${job}`);
 
-const contentApp = document.querySelector('#app');
-let html = `<ul>
-<li>Name: ${name}</li>
-<li>Job: ${job}</li>
-</ul>
-`;
-contentApp.innerHTML = html;
+// const contentApp = document.querySelector('#app');
+
+// let html = `<ul>
+// <li>Name: ${name}</li>
+// <li>Job: ${job}</li>
+// </ul>
+// `;
+
+// contentApp.innerHTML = html;
 
 function saludar (name){
     console.log('====================================');
@@ -98,3 +100,24 @@ const person = {
         console.log(`${this.name} is ${this.profession}.`);  
     }
 }
+
+person.showInfo();
+
+
+const basket = ['Product 1', 'Product 2', 'Product 3'];
+
+const contentApp = document.querySelector('#app');
+
+let html = '';
+basket.forEach(product => {
+    html += `<li>${product}</li>`;
+})
+contentApp.innerHTML = html;
+
+basket.map(product => {
+    return `The product is ${product}`;
+});
+
+console.log('====================================');
+console.log(Object.keys(person));
+console.log('====================================');
