@@ -89,3 +89,12 @@ const gripin = {band, gender, songs};
 console.log('====================================');
 console.log(gripin);
 console.log('====================================');
+
+const person = {
+    name: 'José',
+    profession: 'Web developer',
+    age: 26,
+    showInfo: function(){
+        console.log(`${this.name} is ${this.profession}.`);  
+    }
+}
