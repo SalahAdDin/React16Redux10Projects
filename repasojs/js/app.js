@@ -60,7 +60,7 @@ const learningJS = {
         newer: 'ES6',
         older: 'ES5'
     },
-    frameworks: ['VueJS', 'AngularJS']
+    frameworks: ['Laravel', 'AngularJS', 'Django']
 }
 
 // let version = learningJS.version.newer;
@@ -106,13 +106,14 @@ person.showInfo();
 
 const basket = ['Product 1', 'Product 2', 'Product 3'];
 
-const contentApp = document.querySelector('#app');
+// const contentApp = document.querySelector('#app');
 
-let html = '';
-basket.forEach(product => {
-    html += `<li>${product}</li>`;
-})
-contentApp.innerHTML = html;
+// let html = '';
+// basket.forEach(product => {
+//     html += `<li>${product}</li>`;
+// })
+
+// contentApp.innerHTML = html;
 
 basket.map(product => {
     return `The product is ${product}`;
@@ -197,3 +198,53 @@ applyDiscount.then(result => {
 }).catch(error => {
     console.log(error);
 })
+
+// Promises with Ajax
+const downloadUsers = quantity => new Promise((resolve, reject) => {
+    const api = `https://randomuser.me/api/?results=${quantity}&nat=us`;
+
+    // calling to Ajax
+    const xhr = new XMLHttpRequest();
+
+    // open connection
+    xhr.open('GET', api, true);
+
+    // on load
+    xhr.onload = () => {
+        if(xhr.status === 200){
+            resolve(JSON.parse(xhr.responseText).results);
+        } else {
+            reject(Error(xhr.statusText));
+        }
+    }
+
+    // optional: on error
+    xhr.onerror = (error) => reject(error);
+
+    // send
+    xhr.send();
+});
+
+
+console.log('====================================');
+
+downloadUsers(20).then(
+    members => printHTML(members),
+    error => console.error(new Error(`Error ${error}`))
+);
+
+console.log('====================================');
+
+function printHTML(users){
+    let html = '';
+    users.forEach(user => {
+        html += `<li>
+        Name: ${user.name.first} ${user.name.last}
+        Country: ${user.nat}
+        Picture: <img src="${user.picture.medium}"/>
+        </li>`;
+    });
+    const contentApp = document.querySelector('#app');
+    contentApp.innerHTML = html;
+}
+}
