@@ -249,32 +249,7 @@ function printHTML(users){
     contentApp.innerHTML = html;
 }
 
-
-// Class
-class Task{
-    constructor(title, priority){
-        this.title = title;
-        this.priority = priority
-    }
-    show(){
-        return `Task: ${this.title}, Priority: ${this.priority}`;        
-    }
-}
-
-class PendingPurchase extends Task {
-    constructor(title, priority, quantity){
-        super(title, priority);
-        this.quantity = quantity;
-    }
-    show(){
-        return `${super.show()}, Quantity: ${this.quantity}`;
-    }
-}
-
-// creating objects
-let task1 = new Task('Learning JavaScript', 'High');
-let task2 = new Task('Make Tea', 'Low');
-let purchase1 = new PendingPurchase('Soap', 'Urgent', 3);
+import {task1, task2, purchase1} from './taks.js';
 
 console.log('====================================');
 console.log(task1.show());
