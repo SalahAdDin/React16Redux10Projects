@@ -244,7 +244,28 @@ function printHTML(users){
         Picture: <img src="${user.picture.medium}"/>
         </li>`;
     });
+
     const contentApp = document.querySelector('#app');
     contentApp.innerHTML = html;
 }
+
+
+// Class
+class Task{
+    constructor(title, priority){
+        this.title = title;
+        this.priority = priority
+    }
+    show(){
+        return `Task: ${this.title}, Priority: ${this.priority}`;        
+    }
 }
+
+// creating objects
+let task1 = new Task('Learning JavaScript', 'High');
+let task2 = new Task('Make Tea', 'Low');
+
+console.log('====================================');
+console.log(task1.show());
+console.log(task2.show());
+console.log('====================================');
