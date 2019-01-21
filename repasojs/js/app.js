@@ -249,15 +249,16 @@ function printHTML(users){
     contentApp.innerHTML = html;
 }
 
-import Task from './taks.js'
+import Task from './taks.js';
+import PendingPurchase from './purchases.js';
 
 // creating objects
 let task1 = new Task('Learning JavaScript', 'High');
 let task2 = new Task('Make Tea', 'Low');
-// let purchase1 = new PendingPurchase('Soap', 'Urgent', 3);
+let purchase1 = new PendingPurchase('Soap', 'Urgent', 3);
 
 console.log('====================================');
 console.log(task1.show());
 console.log(task2.show());
-// console.log(purchase1.show());
+console.log(purchase1.show());
 console.log('====================================');
