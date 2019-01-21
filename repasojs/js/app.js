@@ -161,12 +161,15 @@ const students = [
 const mayores = students.filter(student => { 
     return student.age > 28;
 });
+
 const alejandra = students.find(student => {
     return student.name === 'Alejandra';
 });
+
 let total_age = students.reduce((totalAge, student) => {
     return totalAge + student.age;
 }, 0);
+
 console.log('====================================');
 console.log(students);
 console.log(mayores);
@@ -174,3 +177,23 @@ console.log(alejandra);
 console.log(`${alejandra.name} is learning ${alejandra.studying}`);
 console.log(`Age's Average: ${total_age / students.length}`);
 console.log('====================================');
+
+// Promises
+
+const applyDiscount = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let discount = true;
+
+        if(discount){
+            resolve('Discount applied!');
+        } else {
+            reject('The discount could not be applied');
+        }
+    }, 3000);
+});
+
+applyDiscount.then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+})
