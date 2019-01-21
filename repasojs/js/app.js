@@ -121,3 +121,30 @@ basket.map(product => {
 console.log('====================================');
 console.log(Object.keys(person));
 console.log('====================================');
+
+
+// Spread operator...
+
+let languages = ['JavaScript', 'PHP', 'Python'];
+// let frameworks = ['ReactJS', 'Laravel', 'Django'];
+
+let comb1 = languages.concat(frameworks);
+let comb2 = [...languages, ...frameworks];
+let newFramworks = [...frameworks];
+
+let [last] = [...languages].reverse();
+// reverse() reverse the array, that's why we create a new copy over we will reverse
+
+function suma(a, b, c){
+    console.log(a+b+c);
+}
+
+const numbers = [1,2,3];
+
+console.log('====================================');
+console.log(comb1);
+console.log(comb2);
+console.log(newFramworks);
+suma(...numbers);
+console.log('====================================');
+console.log('====================================');
