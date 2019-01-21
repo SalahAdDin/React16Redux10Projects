@@ -147,4 +147,30 @@ console.log(comb2);
 console.log(newFramworks);
 suma(...numbers);
 console.log('====================================');
+
+// Methods: filter, find, reduce
+
+const students = [
+    {name:'Juan', age: 23, studying:'JavaScript'},
+    {name:'Pablo', age: 18, studying:'PHP'},
+    {name:'Alejandra', age: 21, studying:'Adobe XD'},
+    {name:'Karen', age: 30, studying:'Python'},
+    {name:'Miguel', age: 35, studying:'ReactJS'}
+]
+
+const mayores = students.filter(student => { 
+    return student.age > 28;
+});
+const alejandra = students.find(student => {
+    return student.name === 'Alejandra';
+});
+let total_age = students.reduce((totalAge, student) => {
+    return totalAge + student.age;
+}, 0);
+console.log('====================================');
+console.log(students);
+console.log(mayores);
+console.log(alejandra);
+console.log(`${alejandra.name} is learning ${alejandra.studying}`);
+console.log(`Age's Average: ${total_age / students.length}`);
 console.log('====================================');
