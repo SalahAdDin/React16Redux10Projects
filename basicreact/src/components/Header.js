@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
-            <h1>Mi nueva Tienda Virtual</h1>
+            <h1>{props.title}</h1>
         </header>
     )
 }
