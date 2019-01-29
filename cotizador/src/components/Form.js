@@ -13,9 +13,20 @@ class Form extends Component {
 
         // get data
 
+        const plan = this.planBasicoRef.current.checked ? 'basico' : 'completo';
+  
         // create the object
+        const infoAuto = {
+            marca: this.marcaRef.current.value,
+            year: this.yearRef.current.value,
+            plan: plan 
+        }
 
         // send to principal component
+        this.props.cotizarSeguro(infoAuto);
+
+        // reset the form
+        // e.currentTarget.reset();
     }
 
     render(){
@@ -30,9 +41,9 @@ class Form extends Component {
                     </select>
                 </div>
 
-                <div className="campo" ref={this.yearRef}>
+                <div className="campo">
                     <label>Año</label>
-                    <select name="year">
+                    <select name="year" ref={this.yearRef}>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
                         <option value="2016">2016</option>
