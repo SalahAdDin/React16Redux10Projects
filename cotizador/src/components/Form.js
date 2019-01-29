@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
+
+    // refs: used to get the form fields' values
+    marcaRef = React.createRef();
+    yearRef = React.createRef();
+    planBasicoRef = React.createRef();
+    planCompletoRef = React.createRef();
+
+    cotizarSeguro = (e) =>  {
+        e.preventDefault();
+
+        // get data
+
+        // create the object
+
+        // send to principal component
+    }
+
     render(){
         return(
-            <form className="cotizar-auto">
+            <form className="cotizar-auto" onSubmit={this.cotizarSeguro}>
                 <div className="campo">
                     <label>Marca</label>
-                    <select name="marca" >
+                    <select name="marca" ref={this.marcaRef}>
                         <option value="americano">Americano</option>
                         <option value="europeo">Europeo</option>
                         <option value="asiatico">Asiatico</option>
                     </select>
                 </div>
 
-                <div className="campo">
+                <div className="campo" ref={this.yearRef}>
                     <label>Año</label>
                     <select name="year">
                         <option value="2018">2018</option>
@@ -31,8 +48,8 @@ class Form extends Component {
                 </div>
                 <div className="campo">
                     <label>Plan:</label>
-                    <input type="radio" name="plan" value="basico"/> Básico
-                    <input type="radio" name="plan" value="completo"/> Completo
+                    <input type="radio" name="plan" value="basico" ref={this.planBasicoRef}/> Básico
+                    <input type="radio" name="plan" value="completo" ref={this.planCompletoRef}/> Completo
                 </div>
 
                 <button type="submit" className="boton">Cotizar</button>
