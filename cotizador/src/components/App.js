@@ -3,14 +3,47 @@ import logo from '../logo.svg';
 import '../css/App.css';
 import Header from './Header';
 import Form from './Form';
+import { getYearDifference, calculateMarca, getPlan } from '../helper';
 
 class App extends Component {
 
-  cotizarSeguro = (data) => {
-    console.log('====================================');
-    console.log(data);
-    console.log('====================================');
+  state = {
+    result: '',
+    data: {}
   }
+
+  cotizarSeguro = (data) => {
+    const {marca, plan, year} = data;
+
+    // base seguro = 2000
+    let result = 2000;
+
+    // get years difference
+    const difference = getYearDifference(year);
+    
+    // for each year deduct 3%
+    result -= ((difference * 3) * result) / 100;
+
+    // increase the value by model
+    result = calculateMarca(marca) * result;
+
+    // increase the value by plan
+    result = parseFloat(result * getPlan(plan)).toFixed(2);
+
+    // create review object
+
+    const dataAuto = {
+      marca: marca,
+      plan: plan,
+      year: year,
+    }
+
+    this.setState({
+      result: result,
+      data: dataAuto
+    })  
+  }
+  
 
   render() {
     return (
