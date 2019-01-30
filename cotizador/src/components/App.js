@@ -5,6 +5,7 @@ import Header from './Header';
 import Form from './Form';
 import { getYearDifference, calculateMarca, getPlan } from '../helper';
 import Summary from './Summary';
+import Result from './Result';
 
 class App extends Component {
 
@@ -52,7 +53,8 @@ class App extends Component {
         <Header title="Cotizador de Seguro de Auto "/>
         <div className="contenedor-formulario">
           <Form cotizarSeguro={this.cotizarSeguro} />
-          <Summary data={this.state.data} result={this.state.result}/>
+          <Summary data={this.state.data}/>
+          <Result result={this.state.result}/>
         </div>
       </div>
     );
