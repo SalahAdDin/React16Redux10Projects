@@ -12,11 +12,15 @@ class App extends Component {
     expenses: {}
   }
 
-  addExpense = gasto => {
+  addExpense = expense => {
     // copy current state
     const expenses = {...this.state.expenses};
+
     // add the expense to the object
+    expenses[`expense-${Date.now()}`] = expense;
+    
     // put in the state
+    this.setState({expenses})
   }
 
   render() {

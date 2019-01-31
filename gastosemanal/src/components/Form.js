@@ -9,14 +9,14 @@ class Form extends Component {
     createExpense = (e) =>{
 
         // prevent default
-        e.preventDefaul();
+        e.preventDefault();
 
         // create the object
         const expense = {
             nameExpense: this.nameExpense.current.value,
             quantityExpense: this.quantityExpense.current.value
         }
-
+        
         // add and send by props
         this.props.addExpense(expense);
 
