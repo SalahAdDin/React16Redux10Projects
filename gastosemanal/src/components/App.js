@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import '../css/App.css';
 import Header from './Header';
 import Form from './Form';
+import List from './List';
 
 class App extends Component {
 
@@ -32,7 +33,8 @@ class App extends Component {
             <div className="one-half column">
               <Form addExpense={this.addExpense}/>
             </div>
-            <div className="one-half column"></div>
+            <div className="one-half column">
+            <List expenses={this.state.expenses}/></div>
           </div>
         </div>
       </div>
