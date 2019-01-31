@@ -8,7 +8,7 @@ class List extends Component {
         <h2>Listado</h2>
         <ul>
             {Object.keys(this.props.expenses).map(key => (
-                <Expense key={key} expense={this.props.expense[key]}/>
+                <Expense key={key} expense={this.props.expenses[key]}/>
             ))}
         </ul>
       </div>
