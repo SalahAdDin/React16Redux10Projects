@@ -6,15 +6,19 @@ class Form extends Component {
     nameExpense = React.createRef();
     quantityExpense = React.createRef();
 
-    addExpenses = (e) =>{
+    createExpense = (e) =>{
 
         // prevent default
         e.preventDefaul();
 
+        // create the object
         const expense = {
             nameExpense: this.nameExpense.current.value,
             quantityExpense: this.quantityExpense.current.value
         }
+
+        // add and send by props
+        this.props.addExpense(expense);
 
         // reset form
         e.currentTarget.reset();
@@ -23,7 +27,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addExpenses}>
+      <form onSubmit={this.createExpense}>
           <h2>Agrega tus gastos aquí</h2>
           <div className="campos">
             <label>Gasto</label>
