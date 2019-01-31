@@ -4,6 +4,7 @@ import '../css/App.css';
 import Header from './Header';
 import Form from './Form';
 import List from './List';
+import { validateBudget } from '../helper';
 
 class App extends Component {
 
@@ -11,6 +12,19 @@ class App extends Component {
     budget: '',
     residuary: '',
     expenses: {}
+  }
+
+  componentDidMount(){
+    this.getBudget();
+  }
+
+  getBudget = () => {
+    let budget = prompt('Enter your initial budget:');
+
+    let result = validateBudget(budget);
+
+    if (result) this.setState({budget, residuary: budget});
+    else this.getBudget();
   }
 
   addExpense = expense => {
