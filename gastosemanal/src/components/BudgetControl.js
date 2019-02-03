@@ -6,8 +6,8 @@ export default class BudgetControl extends Component {
   render() {
     return (
         <React.Fragment>
-            <Budget />
-            <Residuary />
+            <Budget budget={this.props.budget}/>
+            <Residuary residuary={this.props.residuary}/>
         </React.Fragment>
     )
   }

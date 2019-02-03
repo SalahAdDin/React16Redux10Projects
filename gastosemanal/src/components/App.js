@@ -49,8 +49,9 @@ class App extends Component {
               <Form addExpense={this.addExpense}/>
             </div>
             <div className="one-half column">
-            <List expenses={this.state.expenses}/></div>
-            <BudgetControl/>
+              <List expenses={this.state.expenses}/>
+              <BudgetControl budget={this.state.budget} residuary={this.state.residuary}/>
+            </div>
           </div>
         </div>
       </div>
