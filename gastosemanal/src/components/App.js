@@ -35,8 +35,26 @@ class App extends Component {
     // add the expense to the object
     expenses[`expense-${Date.now()}`] = expense;
     
+    // subtract
+    this.subtractBudget(expense.quantityExpense);
+
     // put in the state
     this.setState({expenses})
+  }
+
+  // subtrac the expense from the budget
+  subtractBudget = quantity => {
+    // read the expense
+    let subtract = Number(quantity);
+
+    // copy the state
+    let residuary = this.state.residuary;
+
+    // subtract
+    residuary -= subtract;
+
+    // set a new state
+    this.setState({residuary})
   }
 
   render() {
