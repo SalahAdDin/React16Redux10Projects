@@ -5,7 +5,7 @@ export const validateBudget = budget =>{
     else return false;
 }
 
-export const reviewBudget = (budget, residuary) =>{
+export const reviewBudget = (budget, residuary) => {
     let cssClass;
 
     // Test 25%
