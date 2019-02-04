@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Expense extends Component {
   render() {
@@ -9,6 +10,10 @@ class Expense extends Component {
       </li>
     )
   }
+}
+
+Expense.propTypes ={
+  expense: PropTypes.object.isRequired,
 }
 
 export default Expense;

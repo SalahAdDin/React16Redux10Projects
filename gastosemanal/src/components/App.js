@@ -53,6 +53,8 @@ class App extends Component {
     // subtract
     residuary -= subtract;
 
+    residuary = String(residuary);
+
     // set a new state
     this.setState({residuary})
   }

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { reviewBudget } from '../helper';
 
 export default class Residuary extends Component {
@@ -12,4 +13,9 @@ export default class Residuary extends Component {
         </div>
     )
   }
+}
+
+Residuary.propTypes = {
+  budget: PropTypes.string.isRequired,
+  residuary: PropTypes.string.isRequired
 }
