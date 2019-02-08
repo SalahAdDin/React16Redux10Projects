@@ -4,8 +4,11 @@ import Header from './Header';
 import Appointment from './Appointment';
 
 class App extends Component {
-  createAppointment = () => {
-
+  
+  createAppointment = (appointment) => {
+    console.log('====================================');
+    console.log(appointment);
+    console.log('====================================');
   }
 
   render() {

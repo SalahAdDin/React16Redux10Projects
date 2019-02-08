@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class Appointment extends Component {
 
@@ -16,8 +17,19 @@ class Appointment extends Component {
     createNewAppointment = e => {
         e.preventDefault();
 
-        this.props.createAppointment();
+        const pet = this.namePetRef.current.value,
+            owner = this.nameOwnerRef.current.value,
+            date = this.dateRef.current.value,
+            time = this.timeRef.current.value,
+            symptoms = this.symptomsRef.current.value;
+
+        const newAppointment={
+           id: uuid(), pet, owner, date, time, symptoms
+        }
+
+        this.props.createAppointment(newAppointment);
     }
+    
     render() {
         return (
             <div className="card mt-5">
