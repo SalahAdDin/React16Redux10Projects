@@ -4,10 +4,19 @@ import Header from './Header';
 import Appointment from './Appointment';
 
 class App extends Component {
-  
-  createAppointment = (appointment) => {
+
+  state = {
+    appointments: []
+  }
+
+  createAppointment = (newAppointment) => {
+    const appointments = [...this.state.appointments, newAppointment];
+
+    this.setState({
+      appointments
+    });
     console.log('====================================');
-    console.log(appointment);
+    console.log(appointments);
     console.log('====================================');
   }
 

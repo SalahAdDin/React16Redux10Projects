@@ -27,7 +27,11 @@ class Appointment extends Component {
            id: uuid(), pet, owner, date, time, symptoms
         }
 
+        // send the object to it's father to update its state
         this.props.createAppointment(newAppointment);
+
+        // reset form
+        e.currentTarget.reset();
     }
     
     render() {
