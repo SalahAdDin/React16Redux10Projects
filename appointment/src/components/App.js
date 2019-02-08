@@ -11,6 +11,32 @@ class App extends Component {
     appointments: []
   }
 
+  // It's ready
+  componentDidMount(){
+    const appointmentsLS = localStorage.getItem('appointments');
+    if (appointmentsLS) this.setState({
+      appointments: JSON.parse(appointmentsLS)
+    });
+  }
+
+  // It's executed before
+  componentWillMount() {
+
+  }
+
+  //It's until componet's close
+  componentWillUnmount(){
+
+  }
+
+  //It's at update
+  componentDidUpdate(){
+    localStorage.setItem(
+      'appointments', 
+      JSON.stringify(this.state.appointments)
+    );
+  }
+
   createAppointment = (newAppointment) => {
     const appointments = [...this.state.appointments, newAppointment];
 
