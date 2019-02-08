@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AppointmentItem from './AppointmentItem';
 
 class AppointmentsList extends Component {
     render() {
@@ -8,6 +9,9 @@ class AppointmentsList extends Component {
             <div className="card mt-5">
                 <div className="class-body">
                     <h2 className="card-title text-center">{message}</h2>
+                    <ul className="lista-citas">
+                        <AppointmentItem />
+                    </ul>
                 </div>
             </div>
         );
