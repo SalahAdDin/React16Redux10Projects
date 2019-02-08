@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 import Header from './Header';
 import Appointment from './Appointment';
 import AppointmentsList from './AppointmentsList';
-import { filter } from 'rsvp';
+
 
 class App extends Component {
 
@@ -67,7 +67,9 @@ class App extends Component {
             <Appointment createAppointment={this.createAppointment}/>
           </div>
           <div className="col-md-6">
-          <AppointmentsList appointments={this.state.appointments} deleteAppointment={this.deleteAppointment}/>
+          <AppointmentsList 
+            appointments={this.state.appointments} 
+            deleteAppointment={this.deleteAppointment}/>
           </div>
         </div>
       </div>

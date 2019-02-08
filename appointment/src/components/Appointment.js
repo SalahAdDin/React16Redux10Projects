@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import PropTypes from 'prop-types';
 
 class Appointment extends Component {
 
@@ -88,6 +89,10 @@ class Appointment extends Component {
             </div>
         );
     }
+}
+
+Appointment.propTypes = {
+    createAppointment: PropTypes.func.isRequired,
 }
 
 export default Appointment;
