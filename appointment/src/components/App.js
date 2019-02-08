@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import Header from './Header';
 import Appointment from './Appointment';
+import AppointmentsList from './AppointmentsList';
 
 class App extends Component {
 
@@ -27,6 +28,9 @@ class App extends Component {
         <div className="row">
           <div className="col-md-6">
             <Appointment createAppointment={this.createAppointment}/>
+          </div>
+          <div className="col-md-6">
+          <AppointmentsList appointments={this.state.appointments}/>
           </div>
         </div>
       </div>
