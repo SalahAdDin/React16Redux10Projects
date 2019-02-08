@@ -10,7 +10,9 @@ class AppointmentsList extends Component {
                 <div className="class-body">
                     <h2 className="card-title text-center">{message}</h2>
                     <ul className="lista-citas">
-                        <AppointmentItem />
+                        {Object.keys(this.props.appointments).map(appointment => (
+                            <AppointmentItem key={appointment} info={this.props.appointments[appointment]}/>
+                        ))}
                     </ul>
                 </div>
             </div>
