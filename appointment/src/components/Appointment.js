@@ -11,7 +11,7 @@ class Appointment extends Component {
     symptomsRef = React.createRef();
 
     state = {
-
+        error: false
     }
 
     createNewAppointment = e => {
@@ -22,19 +22,25 @@ class Appointment extends Component {
             date = this.dateRef.current.value,
             time = this.timeRef.current.value,
             symptoms = this.symptomsRef.current.value;
+        
+        if (pet === '' || owner === '' || date === '' || time === '' || symptoms === '') this.setState({error: true});
+        else {
+            const newAppointment={
+            id: uuid(), pet, owner, date, time, symptoms
+            }
 
-        const newAppointment={
-           id: uuid(), pet, owner, date, time, symptoms
+            // send the object to it's father to update its state
+            this.props.createAppointment(newAppointment);
+
+            // error = false
+            this.setState({error: false});
+            // reset form
+            e.currentTarget.reset();
         }
-
-        // send the object to it's father to update its state
-        this.props.createAppointment(newAppointment);
-
-        // reset form
-        e.currentTarget.reset();
     }
     
     render() {
+        const errorExists = this.state.error;
         return (
             <div className="card mt-5">
                 <div className="card-body">
@@ -77,6 +83,7 @@ class Appointment extends Component {
                             </div>
                         </div>
                     </form>
+                    { errorExists ? <div className="alert alert-danger text-center">Todos los campos son obligatorios.</div> : ''}
                 </div>
             </div>
         );
