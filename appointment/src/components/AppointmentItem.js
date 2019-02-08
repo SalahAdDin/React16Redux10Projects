@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 
 class AppointmentItem extends Component {
+    
+    deleteAppointment = () =>{
+        this.props.deleteAppointment(this.props.info.id);
+    }
+    
     render() {
-        const {pet, owner, date, time, symptoms, id} = this.props.info;
+        const {pet, owner, date, time, symptoms} = this.props.info;
             
         return (
             <div className="media mt-3">
@@ -13,6 +18,7 @@ class AppointmentItem extends Component {
                     <p className="card-text"><span>Hora:</span> {time}</p>
                     <p className="card-text"><span>Síntomas:</span></p>
                     <p className="card-text">{symptoms}</p>
+                    <button onClick={this.deleteAppointment} className="btn btn-danger">Borrar</button>
                 </div>
             </div>
         );

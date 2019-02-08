@@ -11,7 +11,10 @@ class AppointmentsList extends Component {
                     <h2 className="card-title text-center">{message}</h2>
                     <ul className="lista-citas">
                         {Object.keys(this.props.appointments).map(appointment => (
-                            <AppointmentItem key={appointment} info={this.props.appointments[appointment]}/>
+                            <AppointmentItem 
+                                key={appointment} 
+                                info={this.props.appointments[appointment]}
+                                deleteAppointment={this.props.deleteAppointment}/>
                         ))}
                     </ul>
                 </div>

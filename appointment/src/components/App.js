@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import Header from './Header';
 import Appointment from './Appointment';
 import AppointmentsList from './AppointmentsList';
+import { filter } from 'rsvp';
 
 class App extends Component {
 
@@ -16,9 +17,19 @@ class App extends Component {
     this.setState({
       appointments
     });
-    console.log('====================================');
-    console.log(appointments);
-    console.log('====================================');
+  }
+
+  deleteAppointment = id =>{
+    // get a state's copy
+    const currentAppointments = [...this.state.appointments]
+
+    // delete the item from the state
+    // get all apppointments from the list that have a different id from the given id
+    const appointments = currentAppointments.filter(appointment => appointment.id !== id);
+
+
+    // Update the state
+    this.setState({appointments});
   }
 
   render() {
@@ -30,7 +41,7 @@ class App extends Component {
             <Appointment createAppointment={this.createAppointment}/>
           </div>
           <div className="col-md-6">
-          <AppointmentsList appointments={this.state.appointments}/>
+          <AppointmentsList appointments={this.state.appointments} deleteAppointment={this.deleteAppointment}/>
           </div>
         </div>
       </div>
