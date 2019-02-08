@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 
 class Appointment extends Component {
+    state = {
+
+    }
+
+    createNewAppointment = e => {
+        e.preventDefault();
+
+        this.props.createAppointment();
+    }
     render() {
         return (
             <div className="card mt-5">
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">Agrega las Citas aquí:</h2>
-                    <form >
+                    <form onSubmit={}>
                         <div className="form-group row">
                             <label className="col-sm-4 col-lg-3 col-form-label">Nombre Mascota</label>
                             <div className="col-sm-8 col-lg-9">
